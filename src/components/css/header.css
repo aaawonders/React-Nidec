@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap');
+
+.Header{
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+    position: sticky;
+    width: 100%;
+    background-color: rgb(17, 51, 37);
+    color: white;
+    display: flex;
+    padding: 0px 10px;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    z-index: 5;
+    /* gap: 20px; */
+}
+
+.Logo{
+    width: 10%;
+}
+
+.Logo img {
+    width: 80%;
+    object-fit: cover;
+}
+
+.Icons{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    gap: 20px;
+    /* position: relative; */
+}
+
+.Button-h{
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: transparent;
+    color: white;
+    font-size: 25px;
+}
+
+.Button-h:is(:hover){
+    background-color: rgba(255, 255, 255, 0.11);
+    transition: ease-in-out 0.2s;
+}
+
+.Button-h.desc::before{
+    content: attr(data-desc);
+    transform: translateY(10px);
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.Button-h.desc:hover::before{
+    content: attr(data-desc);
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    background-color: rgb(15, 63, 44);
+    border: 1px solid rgba(255, 255, 255, 0.377);
+    color: white;
+    font-size: 11px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Poppins', sans-serif;
+    min-width: 60px;
+    white-space: nowrap;
+    height: 30px;
+    padding: 5px;
+    border-radius: 8px;
+    z-index: 2;
+    top: 50px;
+    left: 0px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.Button-h:is(.active)::after{
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 2px;
+    height: 2px;
+    padding: 1px;
+    border-radius: 50% 50% 0% 0%;
+    top: 35px;
+    left: 18.5px;
+}
+
+.User{
+    padding: 5px;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Account{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+
+.AccountIcon{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 5px;
+    font-size: 32px;
+    line-height: 30px;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.603);
+}
+
+.AccountMenu{
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    background-color: rgb(7, 31, 21);
+    font-size: 11px;
+    font-weight: 300;
+    width: 200px;
+    max-height: 200px;
+    left: -90px;
+    top: 60px;
+
+    border: 1px solid rgba(255, 255, 255, 0.377);
+    border-radius: 11px;
+    transform: translateY(20px);
+}
+
+.AccountMenu.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.AccountMenu span{
+    cursor: pointer;
+    padding: 10px 10px;
+    width: 100%;
+}
+
+.AccountMenu span:hover{
+    background-color: rgba(255, 255, 255, 0.11);
+    transition: ease-in-out 0.2s;
+}
+
+.AccountMenu span:not(:first-child) {
+    border-top: 1px solid rgba(255, 255, 255, 0.151);
+}

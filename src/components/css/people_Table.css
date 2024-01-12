@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap');
+
+
+.People-Table{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+.People-Table .Tools{
+    width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(23, 104, 57);
+}
+
+.cngEdit{
+    border: none;
+    width: 50px;
+    height: 25px;
+    border-radius: 20px;
+    display: flex;
+    position: relative;
+    background-color: rgb(78, 78, 78);
+}
+
+.cngEdit:hover{
+    background-color: rgb(98, 98, 98);
+}
+
+.cngEdit::after{
+    content: 'dsadsa';
+    border: 1px solid white;
+    height: 26px;
+    min-width: 66px;
+    line-height: 26px;
+    border-radius: 12px;
+    background-color: white;
+    padding: 5px;
+    position: absolute;
+    font-size: 12px;
+    top: -45px;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: transform ease 0.5s, opacity ease 0.5s; 
+}
+
+.cngEdit:hover::after{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform ease 0.5s opacity ease 0.5s;
+}
+
+.cngEdit span {
+    width: 25px;
+    font-size: 15px;
+    line-height: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.cngEdit.Edit span{
+    right: 0;
+    background-color: orangered;
+    color: white;
+    transition: ease 0.5s;
+}
+
+.cngEdit.View span {
+    left: 0;
+    background-color: rgb(37, 208, 214);
+    color: rgb(9, 46, 48);
+    transition: ease 0.5s;
+}
+
+.cngEdit.View::after{
+    content: 'Visualizando';
+    border: 1px solid white;
+    background-color: rgb(32, 151, 155);
+    color: white;
+}
+
+.cngEdit.Edit::after{
+    content: 'Editando';
+    border: 1px solid white;
+    background-color: rgb(187, 57, 10);
+    color: white;
+}
+
+.cngSave{
+
+    font-size: 20px;
+    line-height: 25px;
+    background-color: rgb(99, 99, 99);
+    color: rgb(49, 49, 49);
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: not-allowed
+}
+
+.cngSave.ready{
+    background-color: rgb(40, 144, 204);
+    color: white;
+    cursor: pointer;
+}
+
+.cngSave.ready:hover{
+    background-color: rgb(53, 158, 219);
+}
+
+.addPerson{
+    text-decoration: none;
+    background-color: rgb(15, 153, 84);
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    color: white;
+}
+
+.addPerson:hover{
+    background-color: rgb(47, 175, 111);
+    transition: ease-in 0.2s;
+}
+
+.People-Table table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.People-Table tr{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.People-Table table thead{
+    background-color: rgb(16, 68, 38);
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+    height: 50px;
+    border: none;
+    width: 100%;
+
+}
+
+.People-Table table thead tr{
+    background-color: rgb(16, 68, 38);
+    border: none;
+    padding: 15px;
+    width: 100%;
+}
+
+.People-Table table tr th svg{
+    margin-right: 5px;
+}
+
+.People-Table table tr th.none svg{
+    display: none;
+}
+
+.People-Table table tr th.asc svg{
+    /* rotate: 180deg; */
+}
+
+.People-Table table tr th.desc svg{
+    rotate: -180deg;
+}
+
+.People-Table th:not(:first-child){
+    padding: 5px;
+    font-weight: 400;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+}
+
+.People-Table th:not(:first-child):hover{
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: ease-in-out 0.2s;
+}
+
+.People-Table th:nth-child(){
+    border-top-left-radius: 50%;
+    padding: 5px;
+    font-weight: 400;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+}
+
+.tr-Person{
+    padding: 15px;
+    height: 70px;
+    text-align: center;
+}
+
+.tr-Person:not(:first-child){
+    border-top: 1px solid white;
+}
+
+.tr-Person .td-photo .person-icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid rgb(27, 100, 57);
+    overflow: hidden;
+    position: relative;
+}
+
+.tr-Person .td-photo .person-icon .icon-change{
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    font-size: 30px;
+    line-height: 100px;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    transition: opacity 0.5s ease;
+}
+
+.tr-Person .td-photo .person-icon:hover .icon-change{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.tr-Person .td-photo .person-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform ease 0.5s;
+}
+
+.tr-Person .td-photo .person-icon:hover img {
+    transform: scale(1.15);
+    transition: transform ease 0.5s;
+}
+
+.tr-Person .td-photo .person-icon.not {
+    color: rgba(255, 255, 255, 0.226);
+    font-size: 50px;
+}
+
+.input-td{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100px;
+    border-radius: 9px;
+    padding: 5px 15px;
+    text-align: center;
+}

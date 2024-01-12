@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap');
+
+.PeopleRegister{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Register-Area{
+    padding: 5px;
+    width: 80%;
+}
+
+.Register-Area .header{
+    background-color: rgb(23, 104, 57);
+    padding: 15px 5px;
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+}
+
+.Register-Area .header span {
+    font-size: 18px;
+    line-height: 2rem;
+    font-weight: bold;
+}
+
+.Register-Area .header .Tools{
+    background-color: rgb(23, 104, 57);
+}
+
+.Register-Area .Reg-input{
+    background-color: rgb(44, 44, 44);
+    border: 2px solid rgb(23, 104, 57);
+    padding: 20px
+}
+
+.input-sp, .input-calendar{
+    padding: 10px;
+    line-height: 1rem;
+    display: flex;
+    font-size: 15px;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 300px;
+}
+
+.label-in{
+    user-select: none;
+    text-align: left;
+}
+
+.input-sp .input-in, .input-calendar .input-in{
+    font-size: 16px;
+    line-height: 2rem;
+    padding: 2px 8px;
+    color: white;
+    background-color: rgb(44, 44, 44);
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid rgba(255, 255, 255, 0.425);
+    border-radius: 11px;
+}
+
+.input-sp .input-in:focus, .input-calendar .input-in:focus{
+    outline: none;
+}
+
+.field-name{
+    gap: 20px;
+    padding: 5px;
+    display: flex;
+}
+
+.input-calendar{
+    position: relative;
+    width: 200px;
+}
+
+.input-calendar .input-in{
+    position: relative;
+    text-align: center;
+}
+
+.input-calendar .btn-OpenCal{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    /* padding: 2px; */
+    line-height: 32px;
+    color: rgba(122, 122, 122, 0.719);
+    background-color: transparent;
+    border: none;
+    top: 35px;
+    border-radius: 11px;
+    right: 15px;
+}
+
+.input-calendar .btn-OpenCal:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: ease-in-out 0.2s;
+}
+
+.calendar{
+    position: absolute;
+    top: 75px;
+    width: 120%;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.calendar.active{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(25px);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+
+.click-area-photo{
+    border: 4px solid grey;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 130px;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.644);
+}
+
+.click-area-photo:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: ease-in-out 0.4s;
+}

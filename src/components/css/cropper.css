@@ -1,0 +1,131 @@
+
+
+.Pop-up{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.Cropper, .Preview{
+    position: absolute;
+    padding: 15px;
+    background-color: rgb(31, 31, 31);
+    border: 1px solid rgba(255, 255, 255, 0.322);
+    border-radius: 11px;
+    width: 430px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.Preview{
+    width: 530px;
+    height: 320px;
+    user-select: none;
+}
+
+.Preview span {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.664);
+}
+
+.PreviewArea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: 100%;
+}
+
+.Cropper .Crop-Tools, .Preview .Preview-Tools{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    padding: 5px;
+}
+
+.Cropper .Crop-Tools button, .Preview .Preview-Tools button {
+    padding: 8px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 15px;
+    color: white;
+}
+
+.Cropper .Crop-Tools button:nth-child(1){
+    background-color: rgb(185, 55, 32);
+}
+
+.Cropper .Crop-Tools button:nth-child(2){
+    background-color: rgb(32, 73, 185);
+}
+
+.Preview .Preview-Tools button:nth-child(1){
+    background-color: rgb(32, 73, 185);
+}
+
+.Preview .Preview-Tools button:nth-child(2){
+    background-color: rgb(22, 134, 91);
+}
+
+.CropArea{
+    max-width: 100%;
+    width: 90%;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+}
+
+.info{
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.596);
+    position: absolute;
+    bottom: 15px;
+}
+
+.Shape{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.Shape-border{
+    overflow: hidden;
+}
+
+.Shape-border.circle{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid rgb(11, 148, 72);
+}
+
+.Shape-border.circle img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Shape-border.square{
+    width: 120px;
+    height: 150px;
+    border: 4px solid rgb(11, 148, 72);
+}
+
+.Shape-border.square img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
